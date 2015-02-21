@@ -1,0 +1,23 @@
+
+@(lists: List[ListTodo])
+
+@main("Todolist") {
+	
+@lists.map { listTodo =>
+	@listTodo.todo - @listTodo.date<br>
+}
+	 <script>
+		$(function() {
+		$( "#datepicker" ).datepicker();
+		});
+	</script>
+	<h3>Show all TodoList</h3><br>
+	<form action="/todolist" method="post">
+		Todo:<input type="text" name="todo"/><br>		
+		Date:<input type="text" name="date" id="datepicker"><br>
+	    <button type="submit">Add</button><br>
+	</form>
+	 by nookskill
+	 
+	 
+}
